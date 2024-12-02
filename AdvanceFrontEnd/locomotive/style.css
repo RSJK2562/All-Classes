@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: orange;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: lightblue;
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: green;
+}
+
+
+#page2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#box {
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+    border-radius: 20px;
+}

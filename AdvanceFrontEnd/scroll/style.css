@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+#page1{
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page2{
+    height: 100%;
+    width: 100%;
+    background-color: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page3{
+    height: 100%;
+    width: 100%;
+    background-color: lightseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.box1{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: red;
+}
