@@ -1,0 +1,71 @@
+All commend For Laravel
+=========================
+composer create-project laravel/laravel crud
+php artisan --version
+
+composer create-project --prefer-dist laravel/laravel:10 ajax
+composer create-project laravel/laravel:10 crud
+
+1. php artisan serve
+
+2. php artisan make:controller MyController
+   php artisan make:controller MyStudent --resource
+
+3. php artisan make:migration create_emp_table
+   php artisan make:migration add_role_column_in_emp_table
+
+   -> php artisan make:seeder UserTableSeeder 
+   -> php artisan db:seed
+
+4. php artisan migrate
+
+5. php artisan migrate:rollback
+
+6. php artisan migrate:reset
+
+7. php artisan migrate:fresh
+   php artisan migrate:fresh --seed
+
+8. php artisan make:model Orders
+
+9. php artisan make:middleware EntarnceMiddleware
+
+10.1. php artisan make:mail SendOtp
+10.2. php artisan vendor:publish
+
+11. composer require razorpay/razorpay:2.*
+
+
+*****************************************************************
+12.1. composer require maatwebsite/excel                        *
+12.2. php artisan make:import UsersImport (use Laravel 11 only) *
+*****************************************************************
+
+13. composer dump-autoload
+===========================
+
+
+**************************************************************************
+Multi_Auth_Larave_11/10 => (auth10)                                     **
+-----------------                                                       **
+1. composer require laravel/breeze --dev | composer require laravel/ui  **
+2. php artisan breeze:install | php artisan ui bootstrap --auth         **
+3. npm install                                                          **
+4. npm run dev                                                          **
+                                                                        **
+php artisan make:model Admin -m                                         **
+php artisan route:list                                                  **
+**************************************************************************
+
+14. php artisan r:l
+
+15. php artisan config:cache | php artisan cache:clear | php artisan optimize | php artisan route:clear
+
+16. composer update
+
+17. Laravel PDF library
+   (https://github.com/barryvdh/laravel-dompdf)
+   composer require barryvdh/laravel-dompdf
+      
+
+
