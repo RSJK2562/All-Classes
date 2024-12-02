@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function swap() {
+            var a = document.getElementById("img1").src;
+            var b = document.getElementById("img2").src;
+            var c = document.getElementById("img3").src;
+
+            document.getElementById("img1").src = c;
+            document.getElementById("img2").src = a;
+            document.getElementById("img3").src = b;
+        }
+    </script>
+</head>
+
+<body>
+    <img src="1.jpg" alt="" height="100" id="img1" onclick="swap()">
+    <img src="2.jpg" alt="" height="100" id="img2" onclick="swap()">
+    <img src="3.jpg" alt="" height="100" id="img3" onclick="swap()">
+    <br>
+    <button onclick="swap()">SWAP</button>
+</body>
+
+</html>

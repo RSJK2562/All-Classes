@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        // name
+        function validateName() {
+            var name = document.getElementById("nameBox").value;
+            if (name.length > 0) {
+
+                var pattern = /^[A-Za-z\s]+$/;
+
+                if (name.match(pattern)) {
+                    document.getElementById("nameBox").style.borderColor = "green";
+                    return true;
+                } else {
+                    document.getElementById("nameBox").style.borderColor = "red";
+                    return false;
+                }
+
+            } else {
+                document.getElementById("nameBox").style.borderColor = "red";
+                document.getElementById("err1").innerHTML = "*";
+                return false;
+            }
+        }
+
+
+        // numbre
+        function validateMobile() {
+            var x = document.getElementById("numberBox").value;
+            var error = document.getElementById("err2");
+            if (x.length > 0) {
+                if (x.length == 10) {
+                    var prt = /^[0-9]+$/;
+                    if (x.match(prt)) {
+                        if (x.charAt(0) >= 6) {
+                            document.getElementById("numberBox").style.borderColor = "green";
+                            return true;
+                        } else {
+                            document.getElementById("numberBox").style.borderColor = "red";
+                            document.getElementById("err2").innerHTML = "Mobile Number Must be start 6,7,8 or 9";
+                            return false;
+                        }
+                    } else {
+                        document.getElementById("numberBox").style.borderColor = "red";
+                        document.getElementById("err2").innerHTML = "Plz Enter Only Number";
+                        return false;
+                    }
+                } else {
+                    document.getElementById("numberBox").style.borderColor = "red";
+                    document.getElementById("err2").innerHTML = "Mobile Number Must be 10 Digit";
+                    return false;
+                }
+            } else {
+                document.getElementById("numberBox").style.borderColor = "red";
+                document.getElementById("err2").innerHTML = "*";
+                return false;
+            }
+        }
+
+        function formValidation() {
+            var status = true;
+            if (validateName() == false) {
+                status = false;
+            }
+            if (validateMobile() == false) {
+                status = false;
+            }
+            return status;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return formValidation()">
+        Enter Your Name:
+        <input type="text" name="" id="nameBox">
+        <span id="err1"></span>
+        <br><br>
+        Enter Your Mobile:
+        <input type="text" name="" id="numberBox">
+        <span id="err2"></span>
+        <br><br>
+        <button>Save</button>
+    </form>
+</body>
+
+</html>

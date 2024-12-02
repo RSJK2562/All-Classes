@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100px;
+            width: 286px;
+            background: url(https://c1.wallpaperflare.com/preview/870/79/678/banner-header-graph-paper-squared-paper.jpg);
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+    <script>
+        function getRandomCap(min, max) {
+            var x = Math.random();
+            x = x * (max - min) + min;
+            x = Math.floor(x);
+            // document.write(x);
+            return x;
+
+        }
+        // getRandomCap(100, 200);
+
+        function getCaptch() {
+            var spl = "@#$&!";
+            var a = getRandomCap(0, 9);
+            var b = String.fromCharCode(getRandomCap(65, 90));
+            var c = String.fromCharCode(getRandomCap(97, 122));
+            var d = spl.charAt(getRandomCap(0, spl.length - 1));
+
+            var e = getRandomCap(0, 9);
+            var f = String.fromCharCode(getRandomCap(65, 90));
+            var g = String.fromCharCode(getRandomCap(97, 122));
+
+            var cp = a + b + c + d + e + f + g;
+
+            document.getElementById("box").innerHTML = cp;
+        }
+
+        function matchcp() {
+            var getCaptch = document.getElementById("box").innerText;
+            var userCaptch = document.getElementById("t1").value;
+            if (getCaptch == userCaptch) {
+                alert("Match!");
+            } else {
+                alert("Not Match");
+            }
+        }
+    </script>
+</head>
+
+<body onload="getCaptch()">
+    <!-- a-z/0-9/@#$& -->
+    <h2>CAPTCHA GENERATOR</h2>
+    <div id="box"></div>
+    <button onclick="getCaptch()">&#8635</button>
+    <input type="text" id="t1">
+    <button onclick="matchcp()">Match CAPTCHA</button>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        input {
+            height: 60px;
+            padding: 10px;
+            border: 0px;
+            outline: 0px;
+            background-color: rgb(202, 230, 255);
+            color: black;
+            border-radius: 5px;
+        }
+
+        button {
+            height: 40px;
+            width: 40px;
+            background-color: rgb(202, 230, 255);
+            border: 0px;
+            outline: 0px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        table tr td {
+            text-align: center;
+        }
+
+        table {
+            margin: 50px auto;
+            background-color: whitesmoke;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: grey;
+            color: white;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+    </style>
+
+    <script>
+        function oneText() {
+            var x = document.getElementById("t1").value;
+            x = x.substr(0, x.length - 1);
+            document.getElementById("t1").value = x;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="cale">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="box" id="t1" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="oneText()">&larr;</button></td>
+                <td><button type="button" onclick="cale.box.value = '' ">C</button></td>
+                <td><button type="button" onclick="cale.box.value += '%' ">%</button></td>
+                <td><button type="button" onclick="cale.box.value += '00' ">00</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="cale.box.value += '7' ">7</button></td>
+                <td><button type="button" onclick="cale.box.value += '8' ">8</button></td>
+                <td><button type="button" onclick="cale.box.value += '9' ">9</button></td>
+                <td><button type="button" onclick="cale.box.value += '+' ">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="cale.box.value += '4' ">4</button></td>
+                <td><button type="button" onclick="cale.box.value += '5' ">5</button></td>
+                <td><button type="button" onclick="cale.box.value += '6' ">6</button></td>
+                <td><button type="button" onclick="cale.box.value += '-' ">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="cale.box.value += '1' ">1</button></td>
+                <td><button type="button" onclick="cale.box.value += '2' ">2</button></td>
+                <td><button type="button" onclick="cale.box.value += '3' ">3</button></td>
+                <td><button type="button" onclick="cale.box.value += '*' ">*</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="cale.box.value += '.' ">.</button></td>
+                <td><button type="button" onclick="cale.box.value += '0' ">0</button></td>
+                <td><button type="button" onclick="cale.box.value += '/' ">/</button></td>
+
+                <td><button type="button" onclick="cale.box.value=eval(cale.box.value) ">=</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

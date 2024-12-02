@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script>
+        function showBox() {
+            var box = document.getElementById("box");
+
+            box.style.width = t1.value;
+            box.style.height = t2.value;
+            box.style.backgroundColor = t3.value;
+        }
+    </script>
+</head>
+
+<body>
+    Enter Width: <input type="text" id="t1">
+    <br>
+    Enter Height: <input type="text" id="t2">
+    <br>
+    Select Color: <input type="color" id="t3">
+    <br>
+    <button onclick="showBox()">Show Box</button>
+    <hr>
+    <div id="box"></div>
+</body>
+
+</html>

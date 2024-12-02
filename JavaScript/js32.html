@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII</title>
+    <script>
+        function getAscii() {
+            var str = document.getElementById("t1").value;
+            for (var x = 0; x < str.length; x++) {
+                var ASCII = str.charCodeAt(x);
+                document.getElementById("p1").innerHTML += ASCII + "<br>";
+            }
+        }
+
+        function getString() {
+            var ascii = document.getElementById("t2").value;
+            var string = String.fromCharCode(ascii);
+            document.getElementById("p1").innerHTML = string;
+        }
+    </script>
+</head>
+
+<body>
+    Enret a String: <input type="text" id="t1">
+    <button onclick="getAscii()">Get ASCII</button>
+    <hr>
+    Enret a ASCII: <input type="text" id="t2">
+    <button onclick="getString()">Get String</button>
+    <br>
+    <p id="p1"></p>
+</body>
+
+</html>

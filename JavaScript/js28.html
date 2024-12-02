@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <style>
+        #showBox {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(0, 226, 226);
+            float: left;
+            margin: 5px;
+
+            line-height: 50px; 
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            color: whitesmoke;
+        }
+    </style>
+
+    <script>
+        function showBox() {
+            for (var x = 1; x <= 10; x++) {
+                document.getElementById("box").innerHTML += "<div id='showBox'>" + x + "</div>";
+            }
+        }
+    </script>
+</head>
+
+<body onload="showBox()">
+    <div id="box"></div>
+</body>
+
+</html>

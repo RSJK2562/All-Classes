@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <style>
+        #showBox {
+            height: 50px;
+            width: 50px;
+            float: left;
+            margin: 5px;
+        }
+        p{
+            line-height: 25px; 
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+                    //0        1        2          3       4       5
+        var color = ['red', 'green', 'orange', 'black', 'blue', 'yellow'];
+        var color1 = ['yellow', 'blue', 'black', 'orange', 'green', 'red'];
+        var c = 0;
+        var c1 = 0;
+
+        var st = 1;
+
+        function showBox() {
+            document.getElementById("box").innerHTML += "<div id='showBox' style='background-color: "+color[c]+"'><p style='color:"+color1[c1]+"'>"+st+"</p></div>";
+
+            c++;
+            c1++;
+
+            if(c==color.length){
+                c=0;
+            }
+
+            if(c1==color1.length){
+                c1=0;
+            }
+
+            if(st <= 99){
+                st++;
+                setTimeout(showBox, 100);
+            }
+        }
+    </script>
+</head>
+
+<body onload="showBox()">
+    <div id="box"></div>
+</body>
+
+</html>

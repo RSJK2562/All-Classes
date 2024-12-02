@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateName() {
+            var name = document.getElementById("nameBox").value;
+            if (name.length > 0) {
+
+                var pattern = /^[A-Za-z\s]+$/;
+
+                if (name.match(pattern)) {
+                    document.getElementById("nameBox").style.borderColor = "green";
+                } else {
+                  document.getElementById("nameBox").style.borderColor = "red";
+                }
+
+            } else {
+                document.getElementById("nameBox").style.borderColor = "red";
+                document.getElementById("error").innerHTML = "*";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <span style="color: red;" id="error"></span>
+    Enter Your Name:
+    <input type="text" id="nameBox">
+    <br>
+    <button onclick="validateName()">Save</button>
+</body>
+
+</html>

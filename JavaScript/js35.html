@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <style>
+        #outer {
+            width: 310px;
+            height: 15px;
+            background-color: rgb(205, 206, 206);
+            padding: 3px;
+        }
+
+        #progress {
+            width: 0%;
+            height: 15px;
+            background-color: red;
+            transition: ease 1s all;
+        }
+    </style>
+    <script>
+        function checkPsd() {
+            var psd = document.getElementById("t1").value;
+            var score = 0;
+
+            if (psd.match(/[a-z]/)) {
+                score++;
+            }
+            if (psd.match(/[A-Z]/)) {
+                score++;
+            }
+            if (psd.match(/[0-9]/)) {
+                score++;
+            }
+            if (psd.match(/[!@#$%&*]/)) {
+                score++;
+            }
+            if (psd.length >= 8) {
+                score++;
+            }
+
+            if (score == 0) {
+                document.getElementById("psdStatus").innerHTML = "";
+                document.getElementById("progress").style.width = "0%";
+            } else if (score == 1) {
+                document.getElementById("psdStatus").innerHTML = "Week";
+                document.getElementById("progress").style.width = "20%";
+                document.getElementById("progress").style.backgroundColor = "red";
+            } else if (score == 2) {
+                document.getElementById("psdStatus").innerHTML = "Fair";
+                document.getElementById("progress").style.width = "40%";
+                document.getElementById("progress").style.backgroundColor = "orange";
+            } else if (score == 3) {
+                document.getElementById("psdStatus").innerHTML = "Good";
+                document.getElementById("progress").style.width = "60%";
+                document.getElementById("progress").style.backgroundColor = "yellow";
+            } else if (score == 4) {
+                document.getElementById("psdStatus").innerHTML = "Strong";
+                document.getElementById("progress").style.width = "80%";
+                document.getElementById("progress").style.backgroundColor = "blue";
+            } else {
+                document.getElementById("psdStatus").innerHTML = "Undreakeble";
+                document.getElementById("progress").style.width = "100%";
+                document.getElementById("progress").style.backgroundColor = "green";
+            }
+        }
+
+        function toggelPsd() {
+            var x = document.getElementById("chk").checked;
+            if (x == true) {
+                document.getElementById("t1").type="text";
+            }else{
+                document.getElementById("t1").type="password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Enter Your Password:
+    <input type="password" id="t1" onkeyup="checkPsd()">
+    <input type="checkbox" id="chk" onclick="toggelPsd()">
+    <br>
+    Password Strength: <b id="psdStatus"></b>
+    <br>
+    <div id="outer">
+        <div id="progress"></div>
+    </div>
+</body>
+
+</html>

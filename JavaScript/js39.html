@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Clock</title>
+    <script>
+        function showClock() {
+            var dt = new Date();
+            var d = dt.getDate();
+            var m = dt.getMonth();
+            m = m + 1;
+            var y = dt.getFullYear();
+
+            var h = dt.getHours();
+
+            var ampm = "";
+            if (h == 12) {
+                ampm = "PM";
+            } else {
+                if (h > 12) {
+                    ampm = "PM";
+                    h = h - 12;
+                } else {
+                    ampm = "AM";
+                }
+            } 
+
+            var min = dt.getMinutes();
+            var sec = dt.getSeconds();
+
+            var datatiem = getTwoDigit(d) + " - " + getTwoDigit(m) + " - " + y + " / " + getTwoDigit(h) + ":" +
+                getTwoDigit(min) + ":" + getTwoDigit(sec) + " " + ampm;
+
+            document.getElementById("clock").innerHTML = datatiem;
+
+            setTimeout(showClock, 1000);
+
+            function getTwoDigit(x) {
+                if (x < 10) {
+                    x = "0" + x;
+                }
+                return x;
+            }
+        }
+    </script>
+</head>
+
+<body onload="showClock()">
+    <h1 id="clock"></h1>
+</body>
+
+</html>

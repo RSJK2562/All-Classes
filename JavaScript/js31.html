@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <style>
+        #box {
+            height: 450px;
+            width: 500px;
+            background: url("1.jpg");
+            background-size: 100% 100%;
+        }
+
+        #box:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function playAudio() {
+            audio.play();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box" onclick="playAudio()">
+        <audio src="summer.mp3" id="audio"></audio>
+    </div>
+</body>
+
+</html>

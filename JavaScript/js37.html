@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateMobile() {
+            var x = document.getElementById("t1").value;
+            var error = document.getElementById("error");
+            if (x.length > 0) {
+                if (x.length == 10) {
+                    var prt = /^[0-9]+$/;
+                    if (x.match(prt)) {
+                        if (x.charAt(0) >= 6) {
+                            document.getElementById("t1").style.borderColor = "green";
+                        } else {
+                            document.getElementById("t1").style.borderColor = "red";
+                            document.getElementById("error").innerHTML = "Mobile Number Must be start 6,7,8 or 9";
+                        }
+                    } else {
+                        document.getElementById("t1").style.borderColor = "red";
+                        document.getElementById("error").innerHTML = "Plz Enter Only Number";
+                    }
+                } else {
+                    document.getElementById("t1").style.borderColor = "red";
+                    document.getElementById("error").innerHTML = "Mobile Number Must be 10 Digit";
+                }
+            } else {
+                document.getElementById("t1").style.borderColor = "red";
+                document.getElementById("error").innerHTML = "*";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Enter Your Mobile No:
+    <input type="text" id="t1">
+    <br>
+    <span id="error"></span>
+    <br><br>
+    <button onclick="validateMobile()">Save</button>
+</body>
+
+</html>
