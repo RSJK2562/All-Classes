@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic-tac-to</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        table {
+            height: 450px;
+            width: 450px;
+            background-color: aliceblue;
+        }
+
+        tr {
+            height: 150px;
+            width: 450px;
+        }
+
+        td {
+            height: 150px;
+            width: 150px;
+            background-color: bisque;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        #gameHint {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #testartBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="gameHint">X Turn</h1>
+    <table align="center" cellspacing="5" border="2">
+        <tr>
+            <td data-index="0"></td>
+            <td data-index="1"></td>
+            <td data-index="2"></td>
+        </tr>
+        <tr>
+            <td data-index="3"></td>
+            <td data-index="4"></td>
+            <td data-index="5"></td>
+        </tr>
+        <tr>
+            <td data-index="6"></td>
+            <td data-index="7"></td>
+            <td data-index="8"></td>
+        </tr>
+    </table>
+    <p>
+        <button id="testartBtn">Restart</button>
+    </p>
+
+    <script src="jquery-3.1.js"></script>
+    <script>
+        var turn = 1; //1=x, 0=o
+        var gameStatus = true;
+        var gameState = [2, 2, 2, 2, 2, 2, 2, 2, 2];
+        var winState = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        $(document).ready(function () {
+            $("td").click(function () {
+                var index = $(this).attr("data-index");
+                if (gameStatus == true && gameState[index] == 2) {
+                    if (turn == 1) {
+                        $(this).html("<img src='x.png'>");
+                        turn = 0;
+                        gameState[index] = 1;
+                        $("#gameHint").html("O Turn");
+                    } else if (turn == 0) {
+                        $(this).html("<img src='o.png'>");
+                        turn = 1;
+                        gameState[index] = 0;
+                        $("#gameHint").html("X Turn");
+                    }
+                }
+
+                // check win over
+                var gameover = true;
+                for (var i = 0; i < gameState.length; i++) {
+                    if (gameState[i] == 2) {
+                        gameover = false;
+                        break;
+                    }
+                }
+
+                if (gameover == true) {
+                    $("#gameHint").html("Game Over, No Player Won");
+                    $("#testartBtn").show();
+                }
+
+                // check win status
+                var winner = checkwin();
+                if (winner == 1) {
+                    $("#gameHint").html("X Player Won");
+                    gameStatus = false;
+                    $("#testartBtn").show();
+                } else if (winner == 0) {
+                    $("#gameHint").html("O Player Won");
+                    gameStatus = false;
+                    $("#testartBtn").show();
+                }
+            });
+
+            $("#testartBtn").click(function () {
+                window.location.reload();
+            });
+        });
+
+        function checkwin() {
+            var status = false;
+            for (var i = 0; i < winState.length; i++) {
+                if ((gameState[winState[i][0]] == gameState[winState[i][1]] && gameState[winState[i][1]] == gameState[
+                        winState[i][2]] && gameState[winState[i][0]] != 2)) {
+                    status = true;
+                    break;
+                }
+            }
+            var winplayer = 2;
+            if (status == true) {
+                if (turn == 0) {
+                    winplayer = 1;
+                } else {
+                    winplayer = 0;
+                }
+            }
+            return winplayer;
+        }
+    </script>
+</body>
+
+</html>

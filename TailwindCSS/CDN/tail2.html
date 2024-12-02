@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
+                },
+                extend: {
+                    screens: {
+                        'xs': {'min':'320px', 'max':'640px'},
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="text-lime-900 text-3xl font-bold lg:text-center md:text-center sm:text-center xs:text-start">Welcome to G-Techs
+    </h1>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <!-- css -->
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="faq" class="2xl:container p-3">
+        <h2 class="text-3xl leading-normal font-bold sm:font-semibold max-w-2xl">FAQs</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6 items-start">
+            <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-1">
+                    <p class="font-semibold text-lg">Question 1</p>
+                    <i class="fa-solid fa-angle-up -rotate-180 transition"></i>
+                </dt>
+                <dd class="text-lg font-light mt-6 hidden" id="faq-1">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nisi dicta dolores quia autem
+                        fugit eos tempora libero molestias commodi iusto optio delectus, ea at, quidem enim? Aliquid,
+                        nostrum reprehenderit!
+                    </p>
+                </dd>
+            </div>
+            <div class="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-2">
+                    <p class="font-semibold text-lg">Question 2</p>
+                    <i class="fa-solid fa-angle-up -rotate-180 transition"></i>
+                </dt>
+                <dd class="text-lg font-light mt-6 hidden" id="faq-2">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nisi dicta dolores quia autem
+                        fugit eos tempora libero molestias commodi iusto optio delectus, ea at, quidem enim? Aliquid,
+                        nostrum reprehenderit!
+                    </p>
+                </dd>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dtElements = document.querySelectorAll('dt');
+        dtElements.forEach(element => {
+            element.addEventListener('click', () => {
+                const ddId = element.getAttribute('aria-controls');
+                const ddElement = document.getElementById(ddId);
+                const ddArrowIcon = element.querySelectorAll('i')[0];
+
+                ddElement.classList.toggle('hidden');
+                ddArrowIcon.classList.toggle('-rotate-180')
+            })
+        })
+    </script>
+</body>
+
+</html>

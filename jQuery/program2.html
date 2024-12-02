@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            position: absolute;
+        }
+    </style>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box").slideUp(4000);
+            });
+            
+            $("#btn2").click(function () {
+                $("#box").slideDown(4000);
+            });
+            
+            $("#btn3").click(function () {
+                $("#box").slideToggle(4000);
+            });
+           
+            $("#btn4").click(function () {
+                $("#box").fadeOut(4000);
+            });
+            
+            $("#btn5").click(function () {
+                $("#box").fadeIn(4000);
+            });
+            
+            $("#btn6").click(function () {
+                $("#box").fadeToggle(4000);
+            });
+            
+            $("#btn7").click(function () {
+                $("#box").hide(4000);
+            });
+            
+            $("#btn8").click(function () {
+                $("#box").show(4000);
+            });
+            
+            $("#btn9").click(function () {
+                $("#box").animate({left:"250px", height: "400px", width: "400px"}, 2000, function(){
+                    alert("Done");
+                });
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn1">Slide Up</button>
+    <button id="btn2">Slide Down</button>
+    <button id="btn3">Slide Toggle</button>
+
+    <button id="btn4">Fade Out</button>
+    <button id="btn5">Fade In</button>
+    <button id="btn6">Fade Toggele</button>
+
+    <button id="btn7">Hide</button>
+    <button id="btn8">Show</button>
+
+    <button id="btn9">Animate</button>
+    <hr>
+    <div id="box"></div>
+</body>
+
+</html>

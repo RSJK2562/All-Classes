@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Set</title>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var x = $("#t1").val(); //to get value
+                $("#t2").val(x); //to set value
+
+                $("#t3").html(x);
+
+                var y = $("#h1").html();
+                $("#h2").text(y);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="t1" placeholder="Enter Your Name">
+    <button id="btn">Send</button>
+    <hr>
+    <input type="text" readonly id="t2">
+    <br>
+    <span><b>Name:</b></span>
+    <span id="t3"></span>
+    <br>
+    <h1 id="h1">
+        <em>Hello, Coder!</em>
+    </h1>
+    <br>
+    <h2 id="h2"></h2>
+</body>
+
+</html>

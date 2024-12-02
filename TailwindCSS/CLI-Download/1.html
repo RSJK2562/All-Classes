@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLI | download</title>
+</head>
+
+<body>
+    <h1><b>Install Tailwind CSS</b></h1>
+    <h2>npm install -D tailwindcss</h2>
+    <h2>npx tailwindcss init</h2>
+    <hr>
+    <h1><b>Configure your template paths</b></h1>
+    <h2>tailwind.config.js => content: ['*']</h2> <!-- * is for all file -->
+    <hr>
+    <h1><b>Add the Tailwind directives to your CSS</b></h1>
+    <h2>style.css => create</h2>
+    <p>
+        @tailwind base;
+        <br>
+        @tailwind components;
+        <br>
+        @tailwind utilities;
+    </p>
+    <hr>
+    <h1><b>Start the Tailwind CLI build process</b></h1>
+    <h2>npx tailwindcss -i ./style.css -o ./output.css --watch</h2>
+    <hr>
+    <h1><b>Start using Tailwind in your HTML</b></h1>
+</body>
+
+</html>

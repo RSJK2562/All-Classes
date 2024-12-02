@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.min.css">
+
+    <script src="jquery-3.1.js"></script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#datepic").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="datepic">
+</body>
+
+</html>

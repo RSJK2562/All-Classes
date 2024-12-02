@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("li").css("color","lime");
+            // $("#p1").css("color","blue");
+            // $(".p1").css("color","yellowgreen");
+
+            $("#list li").eq(4).css("color","blue");
+            $("#list li:odd").css("color","lime");
+            $("#list li:even").css("color","yellow");
+            $("#list").parent().css("background-color", "blue");
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li>Hello Coder_1</li>
+            <li>Hello Coder_2</li>
+            <li>Hello Coder_3</li>
+            <li>Hello Coder_4</li>
+            <li>Hello Coder_5</li>
+            <li>Hello Coder_6</li>
+        </ul>
+    </div>
+
+
+    <p id="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempore id, voluptates autem nobis dolores vel provident temporibus doloribus vitae voluptate optio? Doloremque alias nostrum error est itaque eveniet beatae.
+    </p>
+    <p class="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempore id, voluptates autem nobis dolores vel provident temporibus doloribus vitae voluptate optio? Doloremque alias nostrum error est itaque eveniet beatae.
+    </p>
+    <p class="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, tempore id, voluptates autem nobis dolores vel provident temporibus doloribus vitae voluptate optio? Doloremque alias nostrum error est itaque eveniet beatae.
+    </p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 150px;
+            border: 2px solid;
+            padding: 10px;
+
+            height: 200px;
+        }
+    </style>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var x = $("#box").width();
+            var x = $("#box").innerWidth();
+            var x = $("#box").outerWidth();
+
+            var x = $("#box").height();
+            var x = $("#box").innerHeight();
+            var x = $("#box").outerHeight();
+
+
+            $("#opt").html(x);
+            console.log(x);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum tenetur id officiis eum nihil labore saepe,
+        beatae omnis ad. Voluptates optio eveniet quibusdam nostrum quo doloremque aspernatur delectus quis nesciunt?
+    </div>
+    <hr>
+    <p id="opt"></p>
+</body>
+
+</html>

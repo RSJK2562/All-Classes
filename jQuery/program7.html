@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="myInput">
+    <br><br>
+    <table border="2">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>Anil</td>
+                <td>anil@gmail.com</td>
+                <td>9087654321</td>
+                <td>Anil@123</td>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>aman@gmail.com</td>
+                <td>8907654321</td>
+                <td>Aman@123</td>
+            </tr>
+            <tr>
+                <td>Ravi</td>
+                <td>ravi@gmail.com</td>
+                <td>7890654321</td>
+                <td>Ravi@123</td>
+            </tr>
+            <tr>
+                <td>Karan</td>
+                <td>karan@gmail.com</td>
+                <td>6789054321</td>
+                <td>Karan@123</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

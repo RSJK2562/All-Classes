@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <script src="jquery-3.1.js"></script>
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#popUp1").click(function () {
+                swal("Good job!", "Hello Coders!", "success");
+            });
+            $("#popUp2").click(function () {
+                swal("Good job!", "Hello Coders!", "error");
+            });
+            $("#popUp3").click(function () {
+                swal("Good job!", "Hello Coders!", "info");
+            });
+            $("#popUp4").click(function () {
+                swal("Good job!", "Hello Coders!", "warning");
+            });
+            $("#popUp5").click(function () {
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this imaginary file!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Poof! Your imaginary file has been deleted!", {
+                                icon: "success",
+                            });
+                        } else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="popUp1">Cleck Me 1st</button>
+    <button id="popUp2">Cleck Me 2nd</button>
+    <button id="popUp3">Cleck Me 3rd</button>
+    <button id="popUp4">Cleck Me 4th</button>
+    <button id="popUp5">Cleck Me 5th</button>
+</body>
+
+</html>

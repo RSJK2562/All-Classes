@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Color</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mycolor: '#23667B',
+                        mybg: '#243c5a',
+                    },
+                }
+            }
+        }
+    </script> -->
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    transparent: 'transparent',
+                    current: 'currentColor',
+                    'white': '#ffffff',
+                    'purple': '#3f3cbb',
+                    'midnight': '#121063',
+                    'metal': '#565584',
+                    'tahiti': '#3ab7bf',
+                    'silver': '#ecebff',
+                    'bubble-gum': '#ff77e9',
+                    'bermuda': '#78dcca',
+                },
+                extend: {
+                    colors: {
+                        mycolor: '#23667B',
+                        mybg: '#243c5a',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="text-lime-900 text-3xl text-center">Welcome to G-Techs</h1>
+    <h1 class="text-mycolor text-3xl text-center">Welcome to G-Techs</h1>
+    <h1 class="text-[limegreen] text-3xl text-center">Welcome to G-Techs</h1>
+    <h1 class="text-[#fca5a5] text-3xl text-center">Welcome to G-Techs</h1>
+
+    <hr>
+    <hr>
+    <!-- not worked -->
+    <h1 class="text-lime-900 text-3xl text-center">Welcome to G-Techs</h1>
+
+    <!-- Its worked -->
+    <h1 class="text-midnight text-3xl text-center">Welcome to G-Techs</h1>
+</body>
+
+</html>

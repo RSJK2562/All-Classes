@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#cpwd").on("keyup", function () {
+                var pwd = $("#pwd").val();
+                var cpwd = $("#cpwd").val();
+
+                if(cpwd != pwd){
+                    $("#error").html("Password are not matching.");
+                    $("#error").css("color","red");
+                    return false;
+                }else{
+                    $("#error").html("Password matching.");
+                    $("#error").css("color","green");
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        Password: <input type="password" id="pwd"><br>
+        Confirm Password; <input type="password" id="cpwd"><br>
+        <span id="error"></span><br>
+        <button>Save</button>
+    </form>
+</body>
+
+</html>

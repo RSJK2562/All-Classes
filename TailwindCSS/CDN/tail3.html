@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>container</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': {
+                            'min': '320px',
+                            'max': '640px'
+                        },
+                    },
+                    colors: {
+                        mybg: '#c9c9c9',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container bg-mybg mx-auto">
+        <h1 class="text-lime-900 text-3xl font-bold lg:text-center md:text-center sm:text-center xs:text-center">Welcome to G-Techs.
+        </h1>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="2xl:container bg-mybg">
+        <h1 class="text-lime-900 text-3xl font-bold lg:text-center md:text-center sm:text-center xs:text-center">Welcome to G-Techs.
+        </h1>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="max-w-[1200px] mx-auto bg-slate-200 text-white">
+        <h1 class="text-4xl text-center">Welcome to G-Techs.</h1>
+    </div>
+</body>
+
+</html>

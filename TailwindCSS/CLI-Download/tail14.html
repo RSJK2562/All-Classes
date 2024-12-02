@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <!-- css -->
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- navbar start -->
+    <nav class="p-3 flex bg-white justify-between items-center">
+        <a href="#" id="brand" class="flex gap-2 items-center">
+            <img class="object-cover max-w-12 max-h-12"
+                src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-2048x1229-u8dzt4uh.png" alt="logo">
+            <span class="text-lg font-medium font-myFont">GTechs</span>
+        </a>
+
+        <div id="nav-menu" class="hidden lg:flex gap-12">
+            <a href="" class="font-medium hover:text-blue-500">Home</a>
+            <a href="" class="font-medium hover:text-blue-500">About Us</a>
+            <a href="" class="font-medium hover:text-blue-500">Blog</a>
+            <a href="" class="font-medium hover:text-blue-500">Contact Us</a>
+        </div>
+
+        <button
+            class="hidden lg:block gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>Developers</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button class="p-2 lg:hidden" onclick="handlMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+
+
+        <!-- mobile menu -->
+
+        <!-- <div class="hidden fixed bg-white inset-0 p-3"> -->
+        <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+
+            <div id="nav-bar" class="flex justify-between">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <img class="object-cover max-w-12 max-h-12"
+                        src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-2048x1229-u8dzt4uh.png"
+                        alt="logo">
+                    <span class="text-lg font-medium font-myFont">GTechs</span>
+                </a>
+
+                <button class="p-2 md:hidden" onclick="handlMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+
+            <div class="mt-6">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-200 block rounded-lg">Home</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-200 block rounded-lg">About Us</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-200 block rounded-lg">Blog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-200 block rounded-lg">Contact Us</a>
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+            <button class="mt-6 w-full flex gap-2 items-center px-6 py-4 rounded-lg hover:bg-gray-100">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Developers</span>
+            </button>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+
+    <!-- js -->
+    <script src="navbarjs.js"></script>
+</body>
+
+</html>
