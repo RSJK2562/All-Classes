@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 1.2rem;
+            font-family: cursive;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(to right, #041308, #0b3317);
+        }
+
+        .left-text {
+            flex-basis: 30%;
+        }
+
+        /* .gallery{
+            flex-basis: 50%;
+        } */
+
+        .heading {
+            font-size: 3rem;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        .subheading {
+            color: white;
+            margin-top: 10px;
+            text-align: justify;
+        }
+
+        .gallery {
+            flex-basis: 50%;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 120px;
+        }
+
+        .box {
+            background-size: cover;
+            background-position: top;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            background-blend-mode: hard-light;
+
+            transition: all 1s ease-in-out;
+        }
+
+        .row-2 {
+            grid-row: span 2;
+        }
+
+        .col-2 {
+            grid-column: span 2;
+        }
+
+        .box:hover {
+            background-color: #999;
+            background-position: center;
+            box-shadow: 0 0 4px white;
+        }
+
+
+        /* 2nd day */
+        /* media query for width <= 1024px */
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .gallery {
+                width: 100%;
+                padding-inline: 12px;
+                grid-auto-rows: 100px;
+            }
+
+            .box {
+                grid-row: span 1;
+                grid-column: span 3;
+            }
+
+            .heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-text">
+            <h2 class="heading">My Protfolio</h2>
+            <p class="subheading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem totam consectetur unde, mollitia
+                itaque praesentium iure reiciendis optio, odit, quae hic accusantium at explicabo incidunt quasi fuga
+                necessitatibus obcaecati?
+            </p>
+        </div>
+        <div class="gallery">
+            <div class="box row-2"
+                style="background-image: url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 1</div>
+            <div class="box col-2"
+                style="background-image: url(https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 2</div>
+            <div class="box"
+                style="background-image: url(https://plus.unsplash.com/premium_photo-1675826774815-35b8a48ddc2c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 3</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 4</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 5</div>
+            <div class="box"
+                style="background-image: url(https://plus.unsplash.com/premium_photo-1677693662922-3a8f7abe5f2b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 6</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1509099395498-a26c959ba0b7?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 7</div>
+        </div>
+    </div>
+</body>
+
+</html>

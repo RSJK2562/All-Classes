@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause on Hover Slider</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .slide-container {
+            display: flex;
+            animation: scroll 10s linear infinite alternate;
+        }
+
+        /* Alternating left-to-right and right-to-left */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 2.2)); /* Adjust for number of images */
+            }
+        }
+
+        /* Pausing animation on hover */
+        .container:hover .slide-container {
+            animation-play-state: paused;
+        }
+
+        .slide-image {
+            flex: 0 0 250px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .slide-image {
+                flex: 0 0 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slide-container">
+            <!-- Images -->
+            <div class="slide-image">
+                <img src="landscape-1.png" alt="Landscape 1">
+            </div>
+            <div class="slide-image">
+                <img src="landscape-2.png" alt="Landscape 2">
+            </div>
+            <div class="slide-image">
+                <img src="landscape-3.png" alt="Landscape 3">
+            </div>
+            <div class="slide-image">
+                <img src="landscape-1.png" alt="Landscape 1">
+            </div>
+            <div class="slide-image">
+                <img src="landscape-2.png" alt="Landscape 2">
+            </div>
+            <div class="slide-image">
+                <img src="landscape-3.png" alt="Landscape 3">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

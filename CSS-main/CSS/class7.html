@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 400px;
+            width: 400px;
+            border: 2px solid;
+        }
+        #d1{
+            height: 0px;
+            width: 0px;
+            border-top: 200px solid red;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+        }
+        #d2{
+            height: 0px;
+            width: 0px;
+            border-bottom: 200px solid blue;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+        }
+        #d3{
+            height: 0px;
+            width: 0px;
+            border-left: 200px solid yellow;
+            border-top: 200px solid transparent;
+            border-bottom: 200px solid transparent;
+            margin-top: -400px;
+        }
+        #d4{
+            height: 0px;
+            width: 0px;
+            border-right: 200px solid green;
+            border-top: 200px solid transparent;
+            border-bottom: 200px solid transparent;
+            margin-top: -400px;
+            margin-left: 200px;
+        }
+        #main2{
+            height: 0px;
+            width: 0px;
+            border-top: 200px solid red;
+            border-right: 200px solid green;
+            border-bottom: 200px solid blue;
+            border-left: 200px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+    </div>
+    <hr><hr>
+    <div id="main2"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom</title>
+    <style>
+        .zoom-wrapper{
+            height: 500px;
+            width: 500px;
+            background-color: aqua;
+            overflow: hidden;
+        }
+        .zoom-wrapper img{
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.8s;
+        }
+        .zoom-wrapper:hover img{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="zoom-wrapper">
+        <img src="profile.jpg" alt="img" height="100%" width="100%">
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .lop{
+            height: 100px;
+            width: 110px;
+            background-color: burlywood;
+            animation-name: lop;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+            animation-direction: alternate;
+            position: absolute;
+        }
+        .lop h1{
+            color: white;
+            text-align: center;
+        }
+        @keyframes lop {
+          0%{
+            background-color: burlywood;
+            top: 0px;
+            left: 0px;
+          }  
+          25%{
+            background-color: orange;
+            top: 0px;
+            left: 500px;
+          }
+          50%{
+            background-color: rgb(207, 207, 253);
+            top: 500px;
+            left: 500px;
+          }
+          75%{
+            background-color: blue;
+            top: 500px;
+            left: 0px;
+          }
+          100%{
+            background-color: green;
+            top: 0px;
+            left: 0px;
+          }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="lop">
+        <h1>Coding Mode</h1>
+    </div>
+</body>
+</html>
