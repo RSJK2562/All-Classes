@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Trigger</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #page2 {
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        h1 {
+            font-size: 60px;
+            padding: 5px;
+            background-color: gray;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 50px;
+            padding: 5px;
+            background-color: rebeccapurple;
+            position: relative;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page1">
+        <div class="box1"></div>
+    </div>
+    <div id="page2">
+        <h1>Hello Mr</h1>
+        <h2>Coders!</h2>
+    </div>
+    <div id="page3">
+        <div class="box1"></div>
+    </div>
+
+
+
+
+
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <!-- Scroll Trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.from("#page2 h1", {
+            opacity: 0,
+            duration: 2,
+            x: 500,
+            scrollTrigger: {
+                trigger: '#page2 h1',
+                scroller: 'body',
+                markers: true,
+                srart: 'top 50%',
+                scrub: 2
+            }
+        })
+        gsap.from("#page2 h2", {
+            opacity: 0,
+            duration: 2,
+            x: -500,
+            scrollTrigger: {
+                trigger: '#page2 h2',
+                scroller: 'body',
+                markers: true,
+                srart: 'top 50%',
+                scrub: 2,
+            }
+        })
+    </script>
+</body>
+
+</html>
