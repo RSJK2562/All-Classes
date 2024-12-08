@@ -14,7 +14,7 @@ gsap.from('#page2 .box1', {
         trigger: '#page2 .box1',
         scrollr: 'body',
         // markers: true,
-        srart: "top 50%",
+        start: "top 50%",
         end: "top 30%",
         scrub: 2
     }
@@ -29,7 +29,7 @@ gsap.from('#page3 .box1', {
         trigger: '#page3 .box1',
         scrollr: 'body',
         // markers: true,
-        srart: "top 50%",
+        start: "top 50%",
         end: "top 30%",
         scrub: 2
     }
