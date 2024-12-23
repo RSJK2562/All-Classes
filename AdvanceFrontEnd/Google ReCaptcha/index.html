@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA</title>
+   <style>
+    /* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Styling */
+.container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-field {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    box-shadow: 0 0 5px #3b82f6;
+}
+
+/* Recaptcha Styling */
+.g-recaptcha {
+    margin: 15px auto;
+}
+
+/* Button Styling */
+.button {
+    padding: 10px 20px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+   </style>
+
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Feel Free To Contact Us</h1>
+        </div>
+        <form action="?" method="post" class="form-container">
+            <input type="text" name="name" placeholder="Full name" class="input-field">
+            <input type="email" name="email" placeholder="Email" class="input-field">
+            <input type="number" name="number" placeholder="Phone Number" class="input-field">
+
+            <div class="g-recaptcha" data-sitekey="6LcHnaEqAAAAAHHgFEMKpJ5rpwuBe7_8c8JOjpDx"></div>
+
+            <button class="button" type="button">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- Note -->
+    <!-- google | reCAPTCHA -->
+    <!-- https://developers.google.com/recaptcha/ -->
+</body>
+
+</html>
