@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container my-5 py-3">
         @include('Admin/navbar')
         <h2 class="text-center mt-4">All User Data</h2>
         <div class="row justify-content-md-center my-5 py-5">
@@ -52,7 +52,8 @@
                                                 class="fa-solid fa-user-pen"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ 'DeleteProfile/' . $item->id }}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="{{ 'DeleteProfile/' . $item->id }}" class="btn btn-danger btn-sm"><i
+                                                class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 @php

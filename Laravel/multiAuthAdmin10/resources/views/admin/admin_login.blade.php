@@ -68,12 +68,12 @@
                                             <div class="mb-3">
                                                 <label for="email" class="form-label">Email address</label>
                                                 <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email" required autofocus autocomplete="username">
+                                                    placeholder="admin@gmail.com" required autofocus autocomplete="username">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="password" class="form-label">Password</label>
                                                 <input type="password" class="form-control" name="password" id="password" required
-                                                    autocomplete="current-password" placeholder="Password">
+                                                    autocomplete="current-password" placeholder="112233">
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input type="checkbox" class="form-check-input" id="remember_me" name="remember">
@@ -88,8 +88,6 @@
                                                 </button>
                                             </div>
                                         </form>
-
-
                                     </div>
                                 </div>
                             </div>

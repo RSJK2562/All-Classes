@@ -86,7 +86,6 @@
                                         $sr++;
                                     @endphp
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>

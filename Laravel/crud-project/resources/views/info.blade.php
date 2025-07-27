@@ -18,4 +18,3 @@
         $.notify("{{ $info }}", "info");
     </script>
 @endif
-

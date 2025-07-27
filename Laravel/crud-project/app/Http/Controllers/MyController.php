@@ -88,7 +88,7 @@ class MyController extends Controller
             // });
 
             Mail::to($email)->send(new SendOtp($mailData));
-            
+
             $rg_tb->save();
             return back()->with("info", "OTP Send Successfully");
         } else {
@@ -261,6 +261,7 @@ class MyController extends Controller
         $rzp_order_id = $req->razorpay_order_id;
         $paymentId = $req->razorpay_payment_id;
         $order = Orders::where('orderId', $rzp_order_id)->first();
+        
         if ($order) {
             $order->paymentId = $paymentId;
             $order->save();

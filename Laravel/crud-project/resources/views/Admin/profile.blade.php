@@ -6,9 +6,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container my-5 py-3">
         @include('Admin/navbar')
-        <div class="row my-3 justify-content-md-center">
+        <div class="row justify-content-md-center">
             <div class="col-lg-6">
                 <div class="card">
                     <img src="{{ asset('photo/' . $item->photos) }}" class="card-img-top img-fluid" alt="...">

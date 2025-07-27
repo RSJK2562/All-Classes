@@ -24,23 +24,23 @@ class SendOtp extends Mailable
     /**
      * Get the message envelope.
      */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Laravel CRUD - OTP',
-        );
-    }
-    
     // public function envelope(): Envelope
     // {
-    //     // Access the mail data property to get the subject
-    //     $subject = isset($this->mailData['otp']) ? $this->mailData['otp'] : 'Laravel CRUD - OTP';
-
-    //     // Create an envelope with the subject
     //     return new Envelope(
-    //         subject: $subject,
+    //         subject: 'Laravel CRUD - OTP',
     //     );
     // }
+    
+    public function envelope(): Envelope
+    {
+        // Access the mail data property to get the subject
+        $subject = isset($this->mailData['otp']) ? $this->mailData['otp'] : 'Laravel CRUD - OTP';
+
+        // Create an envelope with the subject
+        return new Envelope(
+            subject: $subject,
+        );
+    }
 
 
     /**

@@ -61,6 +61,8 @@
                                 <th>Amount</th>
                                 <th>Status</th>
                                 <th>Action</th>
+                                <th>Payment Id</th>
+                                <th>Order Id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,11 +84,14 @@
                                     </td>
                                     <td>
                                         @if (empty($item->paymentId))
-                                            <a href="{{ '/paycourses/' . $item->id }}" class="btn-danger btn-sm">PayNow</a>
+                                            <a href="{{ '/paycourses/' . $item->id }}"
+                                                class="btn-danger btn-sm">PayNow</a>
                                         @else
                                             <span class="text-success"><i class="fa-solid fa-money-bill"></i></span>
                                         @endif
                                     </td>
+                                    <td>{{ $item->paymentId }}</td>
+                                    <td>{{ $item->orderId }}</td>
                                 </tr>
                                 @php
                                     $sr++;
@@ -132,6 +137,34 @@
             }
         </script>
     @endif
+    <script>
+        $data = [
+            "key" => $YOUR_KEY_ID, // Enter the Key ID generated from the Dashboard
+            "amount" =>
+            $5000, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency" => $INR,
+            "name" => "Acme Corp",
+            "description" => "Test transaction",
+            "image" => "https://cdn.razorpay.com/logos/GhRQcyean79PqE_medium.png",
+            "prefill" => [
+                "name" => "Gaurav Kumar",
+                "email" => "gaurav.kumar@example.com",
+                "contact" => "9000090000",
+            ],
+            "notes" => [
+                "address" => "Razorpay Corporate Office",
+                "merchant_order_id" => "12312321",
+            ],
+            "theme" => [
+                "color" => "#3399cc"
+            ],
+            "order_id" =>
+            $order_IluGWxBm9U8zJ8, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        ];
+
+        $json = json_encode($data);
+        require("checkout/{$checkout}.php");
+    </script>
 </body>
 
 </html>

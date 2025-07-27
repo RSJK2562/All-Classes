@@ -15,7 +15,6 @@ class SanctumController extends Controller
             $data = [
                 'status' => 204,
                 'msg' => 'Employee data not found',
-
             ];
         } else {
             $data = [

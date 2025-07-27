@@ -25,6 +25,8 @@ Route::get('/getdata', [ApiController::class, 'getList']);
 
 Route::post('/allemployee', [ApiController::class, 'setdata']);
 
+Route::get('/edit-data/{id}', [ApiController::class, 'editData']);
+
 Route::put('/update-data', [ApiController::class, 'updateData']);
 
 Route::delete('/delete-data/{id}', [ApiController::class, 'deleteData']);

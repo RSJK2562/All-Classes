@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('userId')->nullable();
             $table->string('name', 50)->nullable();
+            
             $table->string('courses', 50)->nullable();
             $table->bigInteger('amount')->nullable();
             $table->string('paymentId')->nullable();

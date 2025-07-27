@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function AdminLogin()
+    {
+        return view('admin.admin_login');
+    }
+
     public function AdminDashboard()
     {
         return view('admin.index');
@@ -27,11 +32,6 @@ class AdminController extends Controller
         return redirect('/admin/login');
     }
 
-    public function AdminLogin()
-    {
-        return view('admin.admin_login');
-    }
-
     public function AdminProfile()
     {
         $id = Auth::user()->id;
@@ -44,7 +44,7 @@ class AdminController extends Controller
     {
         // dd($request);
         $id = Auth::user()->id;
-        $data = User::find($id);
+        $data = User::find($id);    
 
         $data->username = $request->username;
         $data->name = $request->name;
@@ -56,6 +56,7 @@ class AdminController extends Controller
             $file = $request->file('photo');
             @unlink(public_path('backend/assets/upload/admin_img/' . $data->photo));
             $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+            
             $file->move(public_path('backend/assets/upload/admin_img/'), $fileName);
             $data['photo'] = $fileName;
         }
@@ -80,7 +81,6 @@ class AdminController extends Controller
 
     public function AdminUpdatePassword(Request $request)
     {
-
         // Validation
         $request->validate([
             'old_password' => 'required',

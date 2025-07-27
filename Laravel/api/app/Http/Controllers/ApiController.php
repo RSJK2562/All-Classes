@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Validator;
 
 class ApiController extends Controller
 {
-    function getList()
+    public function getList()
     {
         $EmpData =  ApiModal::all();
         return response()->json($EmpData);
     }
 
-    function setdata(Request $req)
+    public function setdata(Request $req)
     {
         // validation
         $rules = array(
@@ -48,7 +48,7 @@ class ApiController extends Controller
                 $res = ApiModal::find($last_rec_id);
                 $data = [
                     'status' => 201,  //Created
-                    'msg' => 'Employee all Successfully',
+                    'msg' => 'Employee add Successfully',
                     'data' => $res
                 ];
             } else {
@@ -63,7 +63,32 @@ class ApiController extends Controller
         // return response()->json($last_rec_id);
     }
 
-    function updateData(Request $request)
+    public function editData($id)
+    {
+        if (!$id) {
+            return response()->json([
+                'status' => 422,
+                'msg' => 'ID is required',
+            ]);
+        }
+        
+        $tbl = ApiModal::find($id);
+
+        if (!$tbl) {
+            return response()->json([
+                'status' => 204, // No Content
+                'msg' => 'Employee data not found',
+            ]);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'msg' => 'Employee data found',
+            'data' => $tbl,
+        ]);
+    }
+
+    public function updateData(Request $request)
     {
         $tbl = ApiModal::find($request->id);
         if (!$tbl) {
@@ -86,7 +111,7 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
-    function deleteData($id)
+    public function deleteData($id)
     {
         // return $id;
         $tbl = ApiModal::destroy($id);
@@ -104,7 +129,7 @@ class ApiController extends Controller
         return response()->json($data);
     }
 
-    function searchData($name)
+    public function searchData($name)
     {
         // return $name;
         $tbl = ApiModal::where('name', 'like', "%$name%")->get();
