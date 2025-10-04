@@ -15,9 +15,9 @@
 - Config Client_id & Redirect URI
     (https://workos.com/)
     - env
-        WORKOS_CLIENT_ID=client_01K39YP73BNY36WJ3Y1CA3ZKVV
-        WORKOS_API_KEY=sk_test_a2V5XzAxSzM5WVA2RjFKTVNBRzMzWTBFODEzRVBYLFRXU2Fld0FVVjJUcHZhSHN1Q1FsT2I5bUY
-        WORKOS_REDIRECT_URL="http://localhost:8000/authenticate"
+        (WORKOS_CLIENT_ID=client_01K39YP73BNY36WJ3Y1CA3ZKVV)
+        (WORKOS_API_KEY=sk_test_a2V5XzAxSzM5WVA2RjFKTVNBRzMzWTBFODEzRVBYLFRXU2Fld0FVVjJUcHZhSHN1Q1FsT2I5bUY)
+        (WORKOS_REDIRECT_URL="http://localhost:8000/authenticate")
 
     - Redirect URI - WorkOS
         Redirect - 1. http://localhost:8000/
