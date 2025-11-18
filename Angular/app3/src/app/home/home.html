@@ -1,0 +1,12 @@
+<p>home works!</p>
+<hr>
+@for (item of productList(); track item.id) {
+<!-- @for (item of productList; track item.id) { -->
+<ul>
+  <li><b>Name:</b> {{ item.title }}</li>
+  <li><b>Category:</b> {{ item.category }}</li>
+  <li><b>Price:</b> {{ item.price }}</li>
+  <li><b>Rating:</b> {{ item.rating }}</li>
+  <li><img src="{{ item.thumbnail }}" alt="{{ item.title }}"></li>
+</ul>
+}

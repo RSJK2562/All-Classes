@@ -1,0 +1,86 @@
+<p>forms1 works!</p>
+<hr>
+
+<h2>Template Driven-Forms</h2>
+<form #actorForm="ngForm" (ngSubmit)="addDetails(actorForm)">
+    <input type="text" name="name" placeholder="Enter name" ngModel>
+    <br>
+    <input type="text" name="password" placeholder="Enter password" ngModel>
+    <br>
+    <select name="gender" ngModel>
+        <option>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">female</option>
+    </select>
+    <br>
+    <input type="range" name="range" max="20" min="0" ngModel>
+    <br>
+    <button>Add User</button>
+</form>
+<p>
+    <b>Name:</b> {{userDetails.name}} <br>
+    <b>Password:</b> {{userDetails.password}} <br>
+    <b>Gender:</b> {{userDetails.gender}} <br>
+    <b>Range:</b> {{userDetails.range}} <br>
+</p>
+
+<br>
+<hr>
+
+<h2>Validation</h2>
+
+<form #userForm="ngForm" (ngSubmit)="addDetailsValidate(userForm.value)">
+    <input type="text" name="name" placeholder="Enter name" required #name="ngModel" ngModel>
+    @if(name?.hasError('required') && name?.touched){
+    <span style="color: red;">Name is required</span>
+    }<br>
+
+    <input type="password" name="password" placeholder="Enter password" required minlength="5" maxlength="8"
+        #password="ngModel" ngModel>
+
+    @if(password?.errors?.['required'] && password?.touched){
+    <span style="color: red;">Password is required</span>
+    }
+    @else if(password?.errors?.['minlength'] && password?.dirty){
+    <span style="color: red;">Minimum 5 characters required</span>
+    }
+    @else if(password?.errors?.['maxlength'] && password?.dirty){
+    <span style="color: red;">Maximum 8 characters allowed</span>
+    }
+    <br>
+
+    <input type="email" name="email" placeholder="Enter email" required maxlength="50"
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" email #email="ngModel" ngModel>
+
+    @if (email?.hasError('required') && email?.touched) {
+    <span style="color: red;">Email is required.</span>
+    }
+    @if (email?.hasError('pattern') && email?.dirty) {
+    <span style="color: red;">Invalid email format.</span>
+    }
+    @if (email?.hasError('maxlength') && email?.dirty) {
+    <span style="color: red;">Email must not exceed 50 characters.</span>
+    }
+    <br>
+
+    <select name="gender" required #gender="ngModel" ngModel>
+        <option selected disabled>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    @if (gender?.hasError('required') && gender?.touched) {
+    <span style="color: red;">Please select a Gender.</span>
+    }
+    <br>
+
+    <textarea name="address" placeholder="Enter address" required pattern="[a-zA-z0-9\s]+" #address="ngModel"
+        ngModel></textarea>
+    @if (address?.hasError('required') && address?.touched) {
+    <span style="color: red;">Address is required.</span>
+    }
+    @if (address?.hasError('pattern') && address?.dirty) {
+    <span style="color: red;">Invalid address format.</span>
+    }
+    <br>
+    <button [disabled]="userForm.invalid">Add User</button>
+</form>

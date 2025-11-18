@@ -1,0 +1,17 @@
+<p>home works!</p>
+<hr>
+<table border="2">
+    <tr>
+        <th colspan="5">Dynamic Routing</th>
+    </tr>
+    @for (item of users; track $index) {
+    <tr>
+        <td>{{$index+1}}</td>
+        <!-- <td><a routerLink="user/{{item.id}}">{{item.name}}</a></td> -->
+        <td><a routerLink="user/{{item.id}}/{{item.name}}">{{item.name}}</a></td>
+        <td><a>{{item.phone}}</a></td>
+        <td><a>{{item.email}}</a></td>
+        <td><a>{{item.role}}</a></td>
+    </tr>
+    }
+</table>

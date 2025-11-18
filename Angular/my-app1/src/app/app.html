@@ -1,0 +1,381 @@
+<h1>{{ title() }}</h1>
+<hr>
+
+<h2>Angular Component</h2>
+<app-login></app-login>
+
+<h2>Component re-used</h2>
+<app-login></app-login>
+
+<h3>SignUp Component</h3>
+<app-signup></app-signup>
+
+<hr>
+
+<h4>Function call on Button Click</h4>
+<button (click)="handleClickEvent()">Click Me</button>
+
+<hr>
+
+<h4>Data type Define in Angular</h4>
+<button (click)="dataType()">dataType</button>
+<button (click)="varType()">varType</button>
+
+
+<br>
+<hr>
+
+
+<h2 style="text-align: center; font-family: Arial; color: #333">Counter App</h2>
+
+<div style="
+    text-align: center;
+    background: #f9f9f9;
+    padding: 30px;
+    width: 350px;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  ">
+  <h3 style="font-size: 2em; margin: 10px 0; color: #222">{{ count }}</h3>
+  <div>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #ff6b6b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleDecrement()">
+      Decrement
+    </button>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #6c757d;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleReset()">
+      Reset
+    </button>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #51cf66;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleIncrement()">
+      Increment
+    </button>
+    <hr>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #ff6b6b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleCounter('minus')">
+      Decrement
+    </button>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #6c757d;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleCounter('reset')">
+      Reset
+    </button>
+    <button style="
+        padding: 8px 16px;
+        margin: 5px;
+        background: #51cf66;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      " (click)="handleCounter('plus')">
+      Increment
+    </button>
+  </div>
+</div>
+
+
+<br>
+<hr>
+
+
+<h4>Event</h4>
+<button (click)="handleEvent()">Click event</button>
+<button (click)="handleEventDetails($event)" class="btn-class" id="btn">Click
+  event details</button>
+<br>
+<div (mouseenter)="handleEventDetails($event)" style="background-color: green; width: 100px; height: 100px"></div>
+<div (mouseleave)="handleEventDetails($event)" style="background-color: yellow; width: 100px; height: 100px"></div>
+<br>
+<input type="text" name="user" (input)="handleInputEventDetails($event)" (focus)="handleInputEventDetails($event)"
+  (blur)="handleInputEventDetails($event)" />
+
+
+<br>
+<hr>
+
+
+<h4>Get & Set Input field Value</h4>
+<input type="text" placeholder="Enter user name" (input)="getName($event)" value="{{ name }}" />
+
+<button (click)="showName()">Get value</button> <button (click)="setName()">Set
+  value</button>
+
+<h6>User Name: {{ name }}</h6>
+<h6>Show User Name: {{ displayName }}</h6>
+<br>
+<input type="text" placeholder="Enter email" #emailField value="{{ email }}" />
+<button (click)="getEmail(emailField.value)">Get Email</button>
+<button (click)="setEmail()">Set Email</button>
+<h5>Email: {{ email }}</h5>
+
+
+<br>
+<hr>
+
+
+<h4>If Else | Control Flow</h4>
+@if (x==10) {
+<div style="background-color: gold; width: 100px; height: 100px"></div>
+}
+
+<button (click)="hide()">Hide</button>
+<button (click)="show()">Show</button>
+<button (click)="toggle()">Toggle</button>
+@if (display) {
+<div style="background-color: green; width: 100px; height: 100px"></div>
+}
+
+<br>
+
+<!-- <button (click)="toggleTwo()">Toggle Two Div</button> -->
+<button (click)="toggleTwo()">
+  {{ toggleDiv ? 'Show greenyellow dev' : 'Show yellowgreen dev' }}
+</button>
+@if(toggleDiv){
+<div style="background-color: greenyellow; width: 100px; height: 100px"></div>
+} @else {
+<div style="background-color: yellowgreen; width: 100px; height: 100px"></div>
+}
+
+
+<br>
+<hr>
+
+
+<h4>Else If | Control Flow</h4>
+<button (click)="handleColor(1)">Red</button>
+<button (click)="handleColor(2)">Yellow</button>
+<button (click)="handleColor(3)">Green</button>
+<button (click)="handleColor(0)">Other</button>
+<input type="text" (input)="handleInput($event)" placeholder="Enter color number" />
+
+@if(color==1){
+<div style="background-color: red; width: 100px; height: 100px"></div>
+} @else if(color==2){
+<div style="background-color: yellow; width: 100px; height: 100px"></div>
+} @else if(color==3){
+<div style="background-color: green; width: 100px; height: 100px"></div>
+} @else {
+<div style="background-color: black; width: 100px; height: 100px"></div>
+}
+
+
+<br>
+<hr>
+
+
+<h4>Switch Case</h4>
+<button (click)="handleColors('red')">Red</button>
+<button (click)="handleColors('green')">Green</button>
+<button (click)="handleColors('yellow')">Yellow</button>
+<button (click)="handleColors('blue')">Blue</button>
+<button (click)="handleColors('gold')">Gold</button>
+<input type="text" placeholder="Enter color name" (input)="handleInputColors($event)">
+@switch (colors) {
+@case('red'){
+<h5 style="background-color: red">Red Color</h5>
+}
+@case('green'){
+<h5 style="background-color: green">Green Color</h5>
+}
+@case('yellow'){
+<h5 style="background-color: yellow">Yellow Color</h5>
+}
+@case('blue'){
+<h5 style="background-color: blue">Blue Color</h5>
+}
+@default {
+<h5>No Color Match</h5>
+}
+}
+
+
+<br>
+<hr>
+
+
+<h4>For Loop</h4>
+@for(user of users; track user){
+<h5>User Name: {{user}}</h5>
+}
+
+<br>
+
+@for(student of students; track student.name; let sr=$index){
+<h5>
+  <span>#{{sr+1}}</span>,
+  <span>Name: {{student.name}}</span>,
+  <span>Age: {{student.age}}</span>,
+  <span>Email: {{student.email}}</span>
+  <button (click)="getStudentName(student.name)">Get Name</button>
+</h5>
+}
+
+
+<br>
+<hr>
+
+
+<h4>Signals</h4>
+<!-- <h5>{{counts}}</h5> -->
+<h5>{{counts()}}</h5>
+<h5>{{y}}</h5>
+<button (click)="updateValue()">Update Value</button>
+
+
+<br>
+<hr>
+
+
+<h4>Signals Data type</h4>
+<h5>{{signalData()}}</h5>
+<h6>{{count1()}}</h6>
+<button (click)="updateSignal()">Update</button>
+
+
+<br>
+<hr>
+
+
+<h4>Computed Signals</h4>
+<h5>{{z()}}</h5>
+<button (click)="showValue()">Show Value</button>
+<button (click)="updateX1()">Update X1</button>
+
+
+<br>
+<hr>
+
+
+<h4>Effect</h4>
+<h5>{{userName1()}}</h5>
+<button (click)="userName1.set('Anil')">Update Name</button>
+
+<button (click)="toggleShowNext()">
+  {{displayNext? 'Hide Next':'Show Next'}}
+</button>
+<h5>{{count2()}}</h5>
+@if(displayNext){
+<h6 style="color: red;">Next topic</h6>
+}
+
+
+<br>
+<hr>
+
+
+<h4>For Loop contextual Variables</h4>
+@for (user of users1; track $index) {
+<!-- <h5>{{$index+1}} {{user}}</h5> -->
+
+<!-- @if ($first || $last) {
+  <h5 style="color: red;">{{$index+1}} {{user}}</h5>
+}
+@else {
+  <h5>{{$index+1}} {{user}}</h5>
+} -->
+
+<!-- @if($odd){
+<h5 style="color: green;">{{$index+1}} {{user}}</h5>
+}
+@if ($even) {
+<h5 style="color: red;">{{$index+1}} {{user}}</h5>
+} -->
+
+<!-- <h5>{{$count}}</h5> -->
+}
+@empty {
+<h6>No record found.</h6>
+}
+
+
+<br>
+<hr>
+
+
+<h4>Two Way Binding</h4>
+<!-- <input type="text" placeholder="enter name" [(ngModel)]="name1">
+<h5>{{name1}}</h5> -->
+
+<input type="text" placeholder="enter name" (input)="changeName($event)">
+<h5>{{name1}}</h5>
+
+
+<br>
+<hr>
+
+
+<h4>To Do List</h4>
+<input type="text" placeholder="Enter new task" [(ngModel)]="task">
+<button (click)="addTask()">Add Task</button>
+<br>
+@for (task of taskLest; track $index) {
+<table border="1">
+  <tr>
+    <td>{{$index+1}}</td>
+    <td>{{task.task}}</td>
+    <td><button (click)="deleteTask(task.id)">Delete</button></td>
+  </tr>
+</table>
+}
+
+
+<br>
+<hr>
+
+
+<h4>Dynamic Styling</h4>
+<!-- <h5 [style.backgroundColor]="bgColor" [style.fontSize]="fontSize">Dynamic Style</h5> -->
+<h5 [style.backgroundColor]="bgColor" [style.fontSize.px]="fontSize">Dynamic Style</h5>
+<h5 [style.fontSize]="zoom? headingSizeBig:headingSizeSmall">Heading 5</h5>
+<h5 [style.fontSize]="zoom? '50px':'40px'">Heading 5</h5>
+<button (click)="updateHeadingSize()">Toggle Font</button>
+
+
+<br>
+<hr>
+
+
+<h4>Routing</h4>
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/login">Login</a></li>
+  <li><a routerLink="/signup">SignUp</a></li>
+</ul>
+<router-outlet></router-outlet>

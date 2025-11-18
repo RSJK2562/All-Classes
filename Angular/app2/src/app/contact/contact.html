@@ -1,0 +1,8 @@
+<p>contact works!</p>
+<hr>
+<!-- Child-Parent से यहाँ: -->
+<app-child-to-parent (getUsers)="handleUsers($event)"></app-child-to-parent>
+
+@for(user of users; track $index){
+<h2>{{user}}</h2>
+}

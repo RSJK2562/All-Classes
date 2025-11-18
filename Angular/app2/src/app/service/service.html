@@ -1,0 +1,6 @@
+<p>service works!</p>
+<hr>
+<button (click)="getProductData()">Show user Data</button>
+@for (item of productData; track $index) {
+<h2>{{item.name}} | {{item.email}} | {{item.phone}}</h2>
+}

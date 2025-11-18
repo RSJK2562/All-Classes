@@ -1,0 +1,44 @@
+<p>form works!</p>
+<hr>
+<!-- <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)"> -->
+<!-- <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+    <input type="text" placeholder="Enter Name" name="name" ngModel> <br>
+    <input type="text" placeholder="Enter Email" name="email" ngModel> <br>
+    <input type="text" placeholder="Enter Phone Number" name="phone" ngModel> <br>
+    <button>Add User</button>
+</form> -->
+
+<!-- // - Set/Populate data in Input fields - // -->
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+    <input type="text" placeholder="Enter Name" name="name" [ngModel]="selectedUser?.name"> <br>
+    <input type="text" placeholder="Enter Email" name="email" [ngModel]="selectedUser?.email"> <br>
+    <input type="text" placeholder="Enter Phone Number" name="phone" [ngModel]="selectedUser?.phone"> <br>
+    <input type="text" placeholder="Enter Role Name" name="role" [ngModel]="selectedUser?.role"> <br>
+    @if(!selectedUser){
+        <button>Add User</button>
+    }
+    @else {
+        <button>Update User</button>
+    }
+</form>
+
+
+<hr>
+<table border="2">
+    @if (users().length === 0) {
+    <tr>
+        <td>No data available</td>
+    </tr>
+    } @else {
+    @for (item of users(); track item.id) {
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.role }}</td>
+        <td><button (click)="deleteUser(item.id)">Delete</button></td>
+        <td><button (click)="selectUser(item.id)">Update</button></td>
+    </tr>
+    }
+    }
+</table>

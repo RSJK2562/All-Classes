@@ -1,0 +1,23 @@
+<p>pipes works!</p>
+<hr>
+<h2>{{title}}</h2>
+<h2>{{title | uppercase }}</h2>
+<h2>{{title | titlecase }}</h2>
+<h2>{{name | lowercase }}</h2>
+
+<h2>{{data | date}}</h2>
+<h2>{{data | date:'fullDate'}}</h2>
+<h2>{{data | date:'hh'}}</h2>
+<h2>{{data | date:'hh:mm'}}</h2>
+<h2>{{data | date:'hh:mm:ss'}}</h2>
+
+<h2>{{amount | currency}}</h2>
+<h2>{{amount | currency:'EUR'}}</h2>
+<h2>{{amount | currency:'INR'}}</h2>
+
+<h2>{{data | date:'fullDate' | uppercase}}</h2>
+<hr>
+<!-- Custom Pipes -->
+<h2><em><u>-: Custom Pipes :-</u></em></h2>
+<h2>{{amounts | currencyConvertor}}</h2>
+<h2>{{100 | currencyConvertor:12}}</h2>

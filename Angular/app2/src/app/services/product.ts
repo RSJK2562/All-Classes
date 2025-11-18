@@ -1,0 +1,85 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class Product {
+  constructor() {
+    console.log('product list');
+  }
+
+  getProductData() {
+    return [
+      {
+        id: 1,
+        name: 'Ravi Kumar',
+        email: 'ravi.kumar@example.com',
+        phone: '+91 9876543210',
+        role: 'Admin',
+      },
+      {
+        id: 2,
+        name: 'Amit Sharma',
+        email: 'amit.sharma@example.com',
+        phone: '+91 9823456780',
+        role: 'User',
+      },
+      {
+        id: 3,
+        name: 'Priya Singh',
+        email: 'priya.singh@example.com',
+        phone: '+91 7901234567',
+        role: 'User',
+      },
+      {
+        id: 4,
+        name: 'Neha Verma',
+        email: 'neha.verma@example.com',
+        phone: '+91 9812233445',
+        role: 'Moderator',
+      },
+      {
+        id: 5,
+        name: 'Arjun Mehta',
+        email: 'arjun.mehta@example.com',
+        phone: '+91 8899776655',
+        role: 'User',
+      },
+      {
+        id: 6,
+        name: 'Karan Patel',
+        email: 'karan.patel@example.com',
+        phone: '+91 9090909090',
+        role: 'User',
+      },
+      {
+        id: 7,
+        name: 'Sneha Desai',
+        email: 'sneha.desai@example.com',
+        phone: '+91 9871234567',
+        role: 'Moderator',
+      },
+      {
+        id: 8,
+        name: 'Ankit Yadav',
+        email: 'ankit.yadav@example.com',
+        phone: '+91 9123456789',
+        role: 'User',
+      },
+      {
+        id: 9,
+        name: 'Simran Kaur',
+        email: 'simran.kaur@example.com',
+        phone: '+91 9001234567',
+        role: 'User',
+      },
+      {
+        id: 10,
+        name: 'Vikas Gupta',
+        email: 'vikas.gupta@example.com',
+        phone: '+91 8800223344',
+        role: 'Admin',
+      },
+    ];
+  }
+}

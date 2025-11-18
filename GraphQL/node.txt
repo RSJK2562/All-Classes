@@ -1,0 +1,101 @@
+-> aap1
+    run aap - http://127.0.0.1:8000/graphiql
+    ----------------------------------------
+    1 Installation (https://lighthouse-php.com/)
+    
+    2 Install via composer
+        composer require nuwave/lighthouse
+
+    3 Publish the default schema
+        php artisan vendor:publish --tag=lighthouse-schema
+
+    4 Install GraphQL DevTools
+        composer require mll-lab/laravel-graphiql
+
+    5 Configuration
+        php artisan vendor:publish --tag=lighthouse-config
+
+    6 php artisan migrate:fresh --seed
+
+-----------------------------------------------------------
+query MyQuery {
+  users {
+    data {
+      id
+      email
+      name
+      created_at
+      updated_at
+    }
+  }
+}
+-----------------------------------------------------------
+query MyQuery {
+  users(first:2 page:2){
+    data {
+      id
+      email
+      name
+      created_at
+      updated_at
+    }
+  }
+}
+-----------------------------------------------------------
+query MyQuery {
+  users(first:2 page:5){
+    data {
+      id
+      email
+      name
+      created_at
+      updated_at
+    }
+    paginatorInfo{
+      firstItem
+      total
+      hasMorePages
+    }
+  }
+}
+-----------------------------------------------------------
+query MyQuery {
+  user(id:10){
+    id
+    name
+    email
+  }
+}
+-----------------------------------------------------------
+
+
+# Mutation
+-----------------------------------------------------------
+mutation MyMutation {
+  createUser(input:{name: "test" email:"test1@gmail.com" password:"12345678"}){
+    id
+    name
+    email
+  }
+}
+-----------------------------------------------------------
+mutation MyMutation {
+  updateUser(
+    id: 12
+    input: {name: "test", email: "test1-update@gmail.com", password: "12345678"}
+  ) {
+    id
+    name
+    email
+  }
+}
+-----------------------------------------------------------
+mutation MyMutation {
+  deleteUser(id: 11) {
+    id
+    name
+    email
+  }
+}
+
+

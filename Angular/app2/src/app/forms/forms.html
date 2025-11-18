@@ -1,0 +1,69 @@
+<p>forms works!</p>
+<hr>
+<h2>Reactive-Forms</h2>
+<form action="">
+    <input type="text" placeholder="Enter name" [formControl]="name">
+    <!-- <span>Value: {{name.value}}</span> -->
+    <br>
+    <input type="text" placeholder="Enter password" [formControl]="password">
+    <!-- <span>Value: {{password.value}}</span> -->
+    <br>
+    <button type="button" (click)="displayValue()">Login</button>
+    <button type="button" (click)="setValues()">Set Value in Filed</button>
+</form>
+
+<br>
+<hr>
+
+<h2>Grouping Form</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Enter Name" formControlName="name1"><br>
+    <input type="text" placeholder="Enter email" formControlName="email1"><br>
+    <input type="text" placeholder="Enter password" formControlName="password1"><br>
+    <button>Submit</button>
+    <button type="button" (click)="setValues1()">Set Values</button>
+</form>
+<p>
+    <b>name:</b> {{this.profileForm.value.name1}} <br>
+    <b>email:</b> {{this.profileForm.value.email1}} <br>
+    <b>password:</b> {{this.profileForm.value.password1}} <br>
+</p>
+
+<br>
+<hr>
+
+<h2>Reactive Form Validation</h2>
+<form [formGroup]="profileFormValidate" (ngSubmit)="onSubmitValidate()">
+
+    <input type="text" placeholder="Enter Name" formControlName="name2">
+    @if(nameValue?.hasError('required') && nameValue?.touched){
+    <span style="color: red;">Name is required</span>
+    }
+    <br>
+
+    <input type="text" placeholder="Enter Email" formControlName="email2">
+    @if (emailValue?.hasError('required') && emailValue?.touched) {
+    <span style="color: red;">Email is required.</span>
+    }
+    @if (emailValue?.hasError('pattern') && emailValue?.dirty) {
+    <span style="color: red;">Invalid email format.</span>
+    }
+    @if (emailValue?.hasError('maxlength') && emailValue?.dirty) {
+    <span style="color: red;">Email must not exceed 50 characters.</span>
+    }
+    <br>
+
+    <input type="password" placeholder="Enter Password" formControlName="password2">
+    <span style="color: red;">
+        @if (passwordValue?.hasError('required') && passwordValue?.touched){
+        Password is required
+        }
+        @else if(passwordValue?.invalid && passwordValue?.dirty){
+        Password must be at least 8 characters long
+        }
+    </span>
+    <br>
+
+    <button type="submit">Submit</button>
+
+</form>

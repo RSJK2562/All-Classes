@@ -1,0 +1,14 @@
+<p>api works!</p>
+<hr>
+@if (users().length === 0) {
+<p>No data available</p>
+} @else {
+@for (item of users(); track item.id) {
+<ul>
+    <li>{{ item.name }}</li>
+    <li>{{ item.email }}</li>
+    <li>{{ item.phone }}</li>
+    <li>{{ item.role }}</li>
+</ul>
+}
+}

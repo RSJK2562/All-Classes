@@ -1,0 +1,24 @@
+<p>about works!</p>
+<hr>
+<!-- यहाँ से Parent-Child: -->
+
+<!-- <h2>Pass Data to child component</h2> -->
+<!-- <app-parent-to-child user="Mr Ravi"></app-parent-to-child> -->
+
+<!-- <app-parent-to-child [user]="userName"></app-parent-to-child> -->
+<!-- <app-parent-to-child [user]="userName" city="Noida"></app-parent-to-child>
+<select name="" #selectedUser (change)="onUserChange(selectedUser.value)">
+    <option value="Anil">Anil</option>
+    <option value="Ravi">Ravi</option>
+    <option value="Aman">Aman</option>
+    <option value="Vipin">Vipin</option>
+    <option value="Anshu">Anshu</option>
+    <option value="Anish">Anish</option>
+</select> -->
+
+<!-- Reuse component: -->
+<h2>Reuse component</h2>
+@for(user of users; track $index){
+<!-- {{user}} -->
+<app-parent-to-child [user]="user"></app-parent-to-child>
+}
