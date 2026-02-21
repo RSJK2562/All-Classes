@@ -5,7 +5,7 @@
 ----------
 -> app
     - npm install bootstrap --save
-    - ng g service post/postService
+    - ng g service post/postService | ng g s post/postService
     - ng g interface post/post
 -> api
     - php artisan install:api

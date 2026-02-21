@@ -71,6 +71,7 @@ php artisan route:list                                                  **
 18. Live API
    - php artisan install:api
    - composer require fruitcake/laravel-cors 
+   
    - composer require laravel/sanctum
    - php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 

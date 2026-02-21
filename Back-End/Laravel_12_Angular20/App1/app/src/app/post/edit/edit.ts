@@ -51,7 +51,7 @@ export class Edit {
 
     this.postService.updatePosts(this.id, input).subscribe({
       next: (res) => {
-        console.log('Post Created:', res);
+        console.log('Post Update:', res);
         alert('Post Update Successfully!');
 
         this.location.back();
