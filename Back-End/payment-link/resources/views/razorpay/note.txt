@@ -1,0 +1,19 @@
+✅ STEP 1: Install Razorpay SDK
+composer require razorpay/razorpay
+
+✅ STEP 2: Add Keys in .env
+RAZORPAY_KEY=rzp_test_xxxxxxxx
+RAZORPAY_SECRET=xxxxxxxxxxxx
+
+✅ STEP 3: Create Config File
+
+config/razorpay.php
+
+<?php
+return [
+    'key' => env('RAZORPAY_KEY'),
+    'secret' => env('RAZORPAY_SECRET'),
+];
+
+✅ STEP 4: Create Payment Controller
+php artisan make:controller RazorpayController

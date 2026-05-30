@@ -1,0 +1,19 @@
+body{
+    background-color: #f4f6f9;
+}
+
+/* Card Design */
+.card{
+    border-radius: 15px;
+}
+
+/* Navbar */
+.navbar{
+    padding: 10px;
+}
+
+/* Button Hover */
+.btn-success:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+}

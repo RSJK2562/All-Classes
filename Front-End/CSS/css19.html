@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .grid-container{
-            background-color: aqua;
-            height: 50px;
-            border: 2px solid whitesmoke;
+        img {
+            filter: blur(5px);
+            filter: brightness(0.4);
+            filter: grayscale(200%);
+            filter: hue-rotate(90deg);
+            filter: contrast(50%);
+            filter: invert(75%);
+            filter: opacity(25%);
+            filter: sepia(60%);
+            filter: saturate(30%);
         }
-        .grid{
-            display: grid;
-            /* grid-template-columns: 1fr 2fr;
-            grid-template-rows: 1fr 2fr; */
-            grid-template: 1fr 1fr/ 1fr 1fr;
-            /* column-gap: 50px; */
-            /* row-gap: 50px; */
-            gap: 50px;
+
+        img:hover {
+            cursor: pointer;
+            filter: none;
         }
     </style>
 </head>
+
 <body>
-    <div class="grid">
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-        <div class="grid-container"></div>
-    </div>
+    <img src="profile.jpg" alt="img" height="500">
 </body>
+
 </html>

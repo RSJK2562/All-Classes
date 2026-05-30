@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="text-center">
+            <a href="{% url 'student_profile' %}">
+                <img src="{% static 'images/student.png' %}" width="50" class="rounded-circle shadow mb-4">
+            </a>
+        </div>
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-success text-white">
+                <h5>
+                    <i class="bi bi-person-plus-fill"></i>
+                    Add Student Profile
+                </h5>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <!-- Student Name -->
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Student
+                        </label>
+
+                    <select class="form-select" name="student_id">
+
+                            <option selected disabled>
+                                Select Name
+                            </option>
+
+                        {% for student in students %}
+
+                            <option value="{{ student.id }}">
+                                {{ student.name }}
+                            </option>
+
+                        {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <!-- Change Photo -->
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Change Photo
+                        </label>
+
+                        <input type="file"
+                               name="profile"
+                               class="form-control"
+                               accept="image/*">
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-between">
+
+                        <!-- Back Button -->
+                        <a href="{% url 'student_profile' %}"
+                           class="btn btn-secondary">
+
+                            <i class="bi bi-arrow-left"></i>
+                            Back
+
+                        </a>
+
+                        <!-- Save Button -->
+                        <button type="submit"
+                                class="btn btn-success">
+
+                            <i class="bi bi-save"></i>
+                            Save Student
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

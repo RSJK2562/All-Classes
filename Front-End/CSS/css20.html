@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transform</title>
+    <title>Document</title>
     <style>
-        #t1{
-            height: 200px;
-            width: 200px;
-            background-color: rgb(232, 238, 167);
-            margin-top: 100px;
-            margin-left: 100px;
+        h1::after {
+            /* content: ' Coders!'; */
 
-            transform: rotate(45deg);
-
-            transform: skew(15deg, 15deg);
-            transform: skewX(145deg);
-            transform: skewY(145deg);
-
-            transform: scale(0.8);
-            transition: .5s;
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: green;
         }
-        #t1:hover{
-            cursor: pointer;
-            transform: rotate(0);
-            transform: translate(15px, 5px);
+
+        h2::before {
+            /* content: 'Hello '; */
+
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: red;
         }
     </style>
 </head>
+
 <body>
-    <div id="t1"></div>
+    <h1>Hello</h1>
+    <h2>Coders!</h2>
+
 </body>
+
 </html>

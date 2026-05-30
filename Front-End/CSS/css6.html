@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        p{
-            color: gray;
-        }
-        p::first-line{
+        p {
             color: red;
+            font-weight: bold;
         }
-        p::first-letter{
-            font-size: 30px;
+
+        p:first-child {
+            color: greenyellow;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        p:last-child {
+            color: yellow;
+            text-decoration: line-through;
+        }
+
+        p:nth-child(3) {
             color: black;
-        }   
-        p::selection{
-            background-color: black;
-            color: white;
+        }
+
+        p:nth-child(odd) {
+            color: purple;
+        }
+
+        p:nth-child(even) {
+            color: green;
         }
     </style>
 </head>
+
 <body>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis adipisci, distinctio voluptatum unde quos eos non aspernatur alias placeat consectetur sapiente numquam dolorum inventore voluptatem tempore repellat sed obcaecati tempora?
-    </p>
+    <p>Hello, Coders!</p>
+    <p>Hello, Coders!</p>
+    <p>Hello, Coders!</p>
+    <p>Hello, Coders!</p>
+    <p>Hello, Coders!</p>
 </body>
+
 </html>

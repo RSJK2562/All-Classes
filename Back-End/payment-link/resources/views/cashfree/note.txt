@@ -1,0 +1,27 @@
+✅ STEP 1: Install Cashfree SDK
+composer require cashfree/cashfree-pg
+
+✅ STEP 2: Add Keys in .env
+CASHFREE_APP_ID=your_app_id
+CASHFREE_SECRET_KEY=your_secret_key
+CASHFREE_ENV=sandbox
+
+For production:
+CASHFREE_ENV=production
+
+✅ STEP 3: Create Config File
+
+config/cashfree.php
+
+<?php
+return [
+    'app_id' => env('CASHFREE_APP_ID'),
+    'secret_key' => env('CASHFREE_SECRET_KEY'),
+    'env' => env('CASHFREE_ENV', 'sandbox'),
+];
+
+✅ STEP 4: Create Controller
+php artisan make:controller CashfreeController
+
+✅ STEP 5: Create Success Blade
+payment-success.blade.php

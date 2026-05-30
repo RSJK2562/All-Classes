@@ -1,155 +1,147 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>3D Flip Card</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: linear-gradient(75deg, #2980b9, #8e44ad);
-            font-family: serif;
+            font-size: 1.2rem;
+            font-family: cursive;
         }
 
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 430px;
-            width: 350px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(to right, #041308, #0b3317);
+        }
+
+        .left-text {
+            flex-basis: 30%;
+        }
+
+        /* .gallery{
+            flex-basis: 50%;
+        } */
+
+        .heading {
+            font-size: 3rem;
+            color: whitesmoke;
             text-align: center;
-            border-radius: 5px;
         }
 
-        .front-face,
-        .back-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ebf8f9;
-            border-radius: 5px;
-            backface-visibility: hidden;
-            box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
-            transition: transform .4s linear;
-        }
-
-        .cover {
-            background: linear-gradient(75deg, #8e44ad, #2980b9);
-            height: 115px;
-            width: 100%;
-            border-radius: 5px 5px 0 0;
-        }
-
-        .profile {
-            height: 115px;
-            width: 115px;
-            border-radius: 50%;
-            padding: 5px;
-            background: white;
-            margin-top: 40px;
-        }
-
-        .name {
-            font-size: 30px;
-            padding-top: 75px;
-        }
-
-        .tag {
-            padding: 5px 0;
-        }
-
-        .about {
+        .subheading {
+            color: white;
             margin-top: 10px;
-            padding: 0px 35px;
-            font-size: 15px;
-        }
-
-        h1 {
-            color: #0d0d0d;
-        }
-
-        p {
-            padding: 20px;
-            color: #262626;
             text-align: justify;
         }
 
-        i {
-            font-size: 30px;
-            padding-left: 20px;
-            cursor: pointer;
+        .gallery {
+            flex-basis: 50%;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 120px;
         }
 
-        i.fa-facebook-square {
-            padding-left: 0;
-            color: #4267b2;
+        .box {
+            background-size: cover;
+            background-position: top;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            background-blend-mode: hard-light;
+
+            transition: all 1s ease-in-out;
         }
 
-        i.fa-twitter-square {
-            color: #38A1F3
+        .row-2 {
+            grid-row: span 2;
         }
 
-        i.fa-instagram {
-            color: #d72888
+        .col-2 {
+            grid-column: span 2;
         }
 
-        i.fa-youtube {
-            color: #eb1c14
+        .box:hover {
+            background-color: #999;
+            background-position: center;
+            box-shadow: 0 0 4px white;
         }
 
-        i.fa-linkedin {
-            color: #0077B5
-        }
 
-        .back-face {
-            transform: perspective(800px) rotateY(-180deg);
-        }
+        /* 2nd day */
+        /* media query for width <= 1024px */
 
-        .front-face {
-            transform: perspective(800px) rotateY(0deg);
-        }
+        @media screen and (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
 
-        .container:hover>.back-face {
-            transform: perspective(800px) rotateY(0deg);
-        }
+            .gallery {
+                width: 100%;
+                padding-inline: 12px;
+                grid-auto-rows: 100px;
+            }
 
-        .container:hover>.front-face {
-            transform: perspective(800px) rotateY(180deg);
+            .box {
+                grid-row: span 1;
+                grid-column: span 3;
+            }
+
+            .heading {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="front-face">
-            <div class="cover">
-                <img src="https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-1024.png" class="profile">
-            </div>
-            <div class="name">Mr. Ravi</div>
-            <div class="tag">Web Designer</div>
-            <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, culpa, voluptatum. Esse
-                recusandae fugit ipsum amet doloremque repellat minima, totam illo fuga facere adipisci doloribus rem
-                modi cum pariatur. Saepe.
+        <div class="left-text">
+            <h2 class="heading">My Protfolio</h2>
+            <p class="subheading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error rem totam consectetur unde, mollitia
+                itaque praesentium iure reiciendis optio, odit, quae hic accusantium at explicabo incidunt quasi fuga
+                necessitatibus obcaecati?
             </p>
         </div>
-        <div class="back-face">
-            <h1>G-Techs</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, perspiciatis. Fugiat inventore porro,
-                ducimus quae iure alias, nesciunt ab a accusantium repellat perspiciatis, pariatur quia perferendis modi
-                blanditiis odio repellendus mollitia cum consequatur! Fuga laudantium id nobis libero totam, ipsum
-                tenetur dolores quaerat officia aspernatur maxime iste, deserunt enim pariatur accusantium dolor
-                excepturi sed quo!</p>
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-linkedin"></i>
-
+        <div class="gallery">
+            <div class="box row-2"
+                style="background-image: url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 1</div>
+            <div class="box col-2"
+                style="background-image: url(https://images.unsplash.com/photo-1458668383970-8ddd3927deed?q=80&w=1767&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 2</div>
+            <div class="box"
+                style="background-image: url(https://plus.unsplash.com/premium_photo-1675826774815-35b8a48ddc2c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 3</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 4</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 5</div>
+            <div class="box"
+                style="background-image: url(https://plus.unsplash.com/premium_photo-1677693662922-3a8f7abe5f2b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 6</div>
+            <div class="box"
+                style="background-image: url(https://images.unsplash.com/photo-1509099395498-a26c959ba0b7?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+                img 7</div>
         </div>
     </div>
-
 </body>
 
 </html>

@@ -1,0 +1,117 @@
+ {% extends 'base.html' %}
+
+ {% block content %}
+
+ <!-- Django Messages -->
+
+{% if messages %}
+
+    {% for message in messages %}
+
+        <div class="alert alert-success alert-dismissible fade show"
+             role="alert">
+
+            {{ message }}
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+
+        </div>
+
+    {% endfor %}
+
+{% endif %}
+
+ <!-- Top Header -->
+ <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="fw-bold text-primary">
+            Student Profile Records
+        </h2>
+
+        <a href="/add-student-profile/" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i>
+            Add Profile
+        </a>
+
+        <a href="/" class="btn btn-dark">
+            <i class="bi bi-arrow-left"></i>
+            Back
+        </a>
+
+    </div>
+
+ <!-- Student Table -->
+ <div class="card shadow border-0">
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Profile</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+            <tbody>
+
+            {% for profile in profiles %}
+
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+
+                <td>{{ profile.student.name }}</td>
+
+                <td>
+                    <img src="{{ profile.profile.url }}"
+                         width="80"
+                         class="img-thumbnail">
+                </td>
+
+                <td>
+
+                    <a href="{% url 'edit_student_profile' profile.id %}"
+                       class="btn btn-sm btn-outline-primary">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    </a>
+
+                    <form method="POST"
+                          action="{% url 'delete_student_profile' profile.id %}"
+                          style="display:inline;">
+
+                        {% csrf_token %}
+
+                        <button type="submit"
+                                class="btn btn-sm btn-outline-danger"
+                                onclick="return confirm('Are you sure you want to delete this profile?')">
+
+                            <i class="bi bi-trash"></i>
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+ {% endblock %}

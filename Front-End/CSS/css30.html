@@ -4,90 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pause on Hover Slider</title>
+    <title>CSS Card hover effects</title>
     <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'lato', sans-serif;
+        }
+
+        html,
         body {
-            min-height: 100vh;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;
-            background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+            background-color: #d6d5d5;
         }
 
-        .container {
-            position: relative;
-            width: 90%;
-            max-width: 1200px;
-            overflow: hidden;
-            height: 350px;
-        }
-
-        .slide-container {
+        .warapper {
             display: flex;
-            animation: scroll 10s linear infinite alternate;
+            width: 70%;
+            justify-content: space-around;
         }
 
-        /* Alternating left-to-right and right-to-left */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(calc(-250px * 2.2)); /* Adjust for number of images */
-            }
+        .card {
+            width: 280px;
+            height: 360px;
+            padding: 2rem 1rem;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            box-shadow: 0px 7px 10px rgba(0, 0, 0, 5);
+            transition: 0.5s ease-in-out;
         }
 
-        /* Pausing animation on hover */
-        .container:hover .slide-container {
-            animation-play-state: paused;
+        .card:hover {
+            transform: translateY(-20px);
         }
 
-        .slide-image {
-            flex: 0 0 250px;
-            margin: 0 15px;
-            overflow: hidden;
-        }
-
-        img {
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
             width: 100%;
-            transition: transform 0.5s ease;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(4, 215, 190, 0.5), rgba(150, 201, 61, 1));
+            z-index: 2;
+            transform: 0.5s all;
+            opacity: 0;
         }
 
-        img:hover {
-            transform: scale(1.1);
+        .card:hover::before {
+            opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .slide-image {
-                flex: 0 0 150px;
-            }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card .info {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.5s all;
+        }
+
+        .card:hover .info {
+            opacity: 1;
+            ;
+            transform: translateY(0px);
+        }
+
+        .card .info h1 {
+            margin: 0;
+        }
+
+        .card .info p {
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card .info .btn {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+
+        .card .info .btn:hover {
+            box-shadow: 0px 7px 10px rgba(0, 0, 0, 5);
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="slide-container">
-            <!-- Images -->
-            <div class="slide-image">
-                <img src="landscape-1.png" alt="Landscape 1">
+    <div class="warapper">
+        <div class="card">
+            <img src="landscape-1.png" alt="">
+            <div class="info">
+                <h1>Heading</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="" class="btn">Read More</a>
             </div>
-            <div class="slide-image">
-                <img src="landscape-2.png" alt="Landscape 2">
+        </div>
+        <div class="card">
+            <img src="landscape-2.png" alt="">
+            <div class="info">
+                <h1>Heading</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="" class="btn">Read More</a>
             </div>
-            <div class="slide-image">
-                <img src="landscape-3.png" alt="Landscape 3">
-            </div>
-            <div class="slide-image">
-                <img src="landscape-1.png" alt="Landscape 1">
-            </div>
-            <div class="slide-image">
-                <img src="landscape-2.png" alt="Landscape 2">
-            </div>
-            <div class="slide-image">
-                <img src="landscape-3.png" alt="Landscape 3">
+        </div>
+        <div class="card">
+            <img src="landscape-3.png" alt="">
+            <div class="info">
+                <h1>Heading</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="" class="btn">Read More</a>
             </div>
         </div>
     </div>
