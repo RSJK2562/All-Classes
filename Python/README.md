@@ -343,4 +343,6 @@ python manage.py shell
 
 ## Author
 
+**Gautam Technologies**
+
 Created for learning Django CRUD operations with image upload functionality.
